@@ -1,0 +1,36 @@
+openapi: 3.0.3
+info:
+  title: BitCoin API
+  description: An Api to receive email notifications about BitCoin prices
+  version: "1.0"
+servers:
+- url: http://localhost
+paths:
+  /api/v1/rate:
+    get:
+      tags:
+      - rate
+      summary: rate rate
+      description: This request should return the current BTC to UAH exchange rate
+        using any third-party service with a public API
+      operationId: rate#rate
+      responses:
+        "200":
+          description: OK response.
+          headers:
+            Content-Length:
+              schema:
+                type: integer
+                example: 2442681099546543592
+                format: int64
+              example: 8879666501859169504
+            Content-Type:
+              schema:
+                type: string
+                default: application/json
+                example: Aliquam dolor dicta beatae esse.
+              example: Deserunt est asperiores perspiciatis harum.
+components: {}
+tags:
+- name: rate
+  description: The rate service provides BTC to UAH exchange rate
